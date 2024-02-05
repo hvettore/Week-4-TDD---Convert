@@ -1,20 +1,18 @@
 ﻿public class Functions
 {
-    public static long Factorial(int n)
+    public static double ConvertInches(double inches, string unit)
     {
-        // Test for invalid input.
-        if ((n < 0) || (n > 20))
+        switch (unit.ToLower())
         {
-            return -1;
+            case "-mm":
+                return inches * 25.4;
+            case "-cm":
+                return inches * 2.54;
+            case "-m":
+                return inches * 0.0254;
+            default:
+                return -1;
         }
-
-        // Calculate the factorial iteratively rather than recursively.
-        long tempResult = 1;
-        for (int i = 1; i <= n; i++)
-        {
-            tempResult *= i;
-        }
-        return tempResult;
     }
 }
 
@@ -22,37 +20,30 @@ class MainClass
 {
     static int Main(string[] args)
     {
-        // Test if input arguments were supplied.
-        if (args.Length == 0)
+        if (args.Length < 2)
         {
-            Console.WriteLine("Please enter a numeric argument.");
-            Console.WriteLine("Usage: Factorial <num>");
+            Console.WriteLine("Please enter both a numeric argument and a unit.");
+            Console.WriteLine("Example: Converter <num> <-unit>");
             return 1;
         }
 
-        // Try to convert the input arguments to numbers. This will throw
-        // an exception if the argument is not a number.
-        // num = int.Parse(args[0]);
         int num;
         bool test = int.TryParse(args[0], out num);
         if (!test)
         {
             Console.WriteLine("Please enter a numeric argument.");
-            Console.WriteLine("Usage: Factorial <num>");
+            Console.WriteLine("Example: Converter <num> <-unit>");
             return 1;
         }
 
-        // Calculate factorial.
-        long result = Functions.Factorial(num);
+        string unit = args[1];
+        double convertedValue = Functions.ConvertInches(num, unit);
 
-        // Print result.
-        if (result == -1)
-            Console.WriteLine("Input must be >= 0 and <= 20.");
+        if (convertedValue == -1)
+            Console.WriteLine("Invalid unit. Use -mm, -cm, or -m.");
         else
-            Console.WriteLine($"The Factorial of {num} is {result}.");
+            Console.WriteLine($"{num} inches is {convertedValue} {unit.Substring(1)}.");
 
         return 0;
     }
 }
-// If 3 is entered on command line, the
-// output reads: The factorial of 3 is 6.

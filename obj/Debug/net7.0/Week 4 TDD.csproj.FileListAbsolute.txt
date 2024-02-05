@@ -1,0 +1,14 @@
+D:\University\UiA\Semester 4\Programming 2\Week 4 TDD\bin\Debug\net7.0\Week 4 TDD.exe
+D:\University\UiA\Semester 4\Programming 2\Week 4 TDD\bin\Debug\net7.0\Week 4 TDD.deps.json
+D:\University\UiA\Semester 4\Programming 2\Week 4 TDD\bin\Debug\net7.0\Week 4 TDD.runtimeconfig.json
+D:\University\UiA\Semester 4\Programming 2\Week 4 TDD\bin\Debug\net7.0\Week 4 TDD.dll
+D:\University\UiA\Semester 4\Programming 2\Week 4 TDD\bin\Debug\net7.0\Week 4 TDD.pdb
+D:\University\UiA\Semester 4\Programming 2\Week 4 TDD\obj\Debug\net7.0\Week 4 TDD.GeneratedMSBuildEditorConfig.editorconfig
+D:\University\UiA\Semester 4\Programming 2\Week 4 TDD\obj\Debug\net7.0\Week 4 TDD.AssemblyInfoInputs.cache
+D:\University\UiA\Semester 4\Programming 2\Week 4 TDD\obj\Debug\net7.0\Week 4 TDD.AssemblyInfo.cs
+D:\University\UiA\Semester 4\Programming 2\Week 4 TDD\obj\Debug\net7.0\Week 4 TDD.csproj.CoreCompileInputs.cache
+D:\University\UiA\Semester 4\Programming 2\Week 4 TDD\obj\Debug\net7.0\Week 4 TDD.dll
+D:\University\UiA\Semester 4\Programming 2\Week 4 TDD\obj\Debug\net7.0\refint\Week 4 TDD.dll
+D:\University\UiA\Semester 4\Programming 2\Week 4 TDD\obj\Debug\net7.0\Week 4 TDD.pdb
+D:\University\UiA\Semester 4\Programming 2\Week 4 TDD\obj\Debug\net7.0\Week 4 TDD.genruntimeconfig.cache
+D:\University\UiA\Semester 4\Programming 2\Week 4 TDD\obj\Debug\net7.0\ref\Week 4 TDD.dll

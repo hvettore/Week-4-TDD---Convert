@@ -1,15 +1,15 @@
-﻿public class Functions
+﻿public class Conversion
 {
-    public static double ConvertInches(double inches, string unit)
+    public static double ConvertInches(double inchInput, string unit)
     {
         switch (unit.ToLower())
         {
             case "-mm":
-                return inches * 25.4;
+                return Math.Round(inchInput * Variable.inchToMillimeter, 2);
             case "-cm":
-                return inches * 2.54;
+                return Math.Round(inchInput * Variable.inchToMillimeter / 10, 2);
             case "-m":
-                return inches * 0.0254;
+                return Math.Round(inchInput * Variable.inchToMillimeter / 1000, 2);
             default:
                 return -1;
         }
@@ -20,10 +20,10 @@ class MainClass
 {
     static int Main(string[] args)
     {
+        Console.Clear();
         if (args.Length < 2)
         {
-            Console.WriteLine("Please enter both a numeric argument and a unit.");
-            Console.WriteLine("Example: Converter <num> <-unit>");
+            Console.WriteLine(Variable.testFail);
             return 1;
         }
 
@@ -31,18 +31,26 @@ class MainClass
         bool test = int.TryParse(args[0], out num);
         if (!test)
         {
-            Console.WriteLine("Please enter a numeric argument.");
-            Console.WriteLine("Example: Converter <num> <-unit>");
+            Console.WriteLine(Variable.testFail);
             return 1;
         }
 
         string unit = args[1];
-        double convertedValue = Functions.ConvertInches(num, unit);
+        double convertedValue = Conversion.ConvertInches(num, unit);
 
         if (convertedValue == -1)
-            Console.WriteLine("Invalid unit. Use -mm, -cm, or -m.");
+        {
+            Console.WriteLine(Variable.testFail);
+            return 1;
+
+        }
         else
+        {
+
+            Console.WriteLine(Variable.testPass);
             Console.WriteLine($"{num} inches is {convertedValue} {unit.Substring(1)}.");
+        }
+
 
         return 0;
     }

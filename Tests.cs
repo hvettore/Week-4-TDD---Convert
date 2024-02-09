@@ -4,6 +4,7 @@ public class Tests
     public bool Run(string[] args)
     {
         TestUserConversion(args);
+        TestUserInputFromConsoleExists(args);
         return testsFullyPassed;
     }
 
@@ -39,6 +40,17 @@ public class Tests
         }
     }
 
+    void TestUserInputFromConsoleExists(string[] args)
+    {
+        if (args.Length == 0 || args.Length > 2)
+        {
+            TestOutcome("TestInputLength", false);
+        }
+        else
+        {
+            TestOutcome("TestInputLength", true);
+        }
+    }
 
     void TestOutcome(string testName, bool isPass)
     {

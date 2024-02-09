@@ -21,37 +21,25 @@ class MainClass
     static int Main(string[] args)
     {
         Console.Clear();
-        if (args.Length < 2)
-        {
-            Console.WriteLine(Variable.testFail);
-            return 1;
-        }
-
         int num;
-        bool test = int.TryParse(args[0], out num);
-        if (!test)
-        {
-            Console.WriteLine(Variable.testFail);
-            return 1;
-        }
-
         string unit = args[1];
+        bool test = int.TryParse(args[0], out num);
         double convertedValue = Conversion.ConvertInches(num, unit);
 
-        if (convertedValue == -1)
+        Tests tests = new Tests();
+        if (!tests.Run(args))
         {
             Console.WriteLine(Variable.testFail);
-            return 1;
 
         }
         else
         {
-
             Console.WriteLine(Variable.testPass);
             Console.WriteLine($"{num} inches is {convertedValue} {unit.Substring(1)}.");
         }
 
-
         return 0;
     }
 }
+
+
